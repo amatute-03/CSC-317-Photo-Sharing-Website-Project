@@ -10,9 +10,9 @@ Please follow the instructions below and fill in the information requested when 
 
 |               | Information   |
 |:-------------:|:-------------:|
-| Student Name  | name-here     |
-| Student ID    | id-here       |
-| Student Email | email-here    |
+| Student Name  | Adan Matute     |
+| Student ID    | 921953341       |
+| Student Email | amatute1@sfsu.edu    |
 
 
 
