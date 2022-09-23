@@ -1,8 +1,51 @@
+* {
+  box-sizing : border-box;
+}
+
 body {
-  padding: 50px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
+
 }
+
+.headerStyling {
+  text-align: center;
+  font: 40px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+}
+
+.navStyling {
+  text-align: center;
+  flex: fit-content;
+
+}
+
+.navLinks {
+  color: #00B7FF;
+  text-decoration: none;
+  padding: 0px 10px 0px 10px;
+  padding-inline-end: 5vw;
+}
+
+.formStuff {
+  /*flex: auto;*/
+  padding: 10px;
+  background: hsl(150, 50%, 50%);
+  text-align: center;
+  border-radius: 1em;
+
+}
+
+.imageScaling {
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
