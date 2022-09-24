@@ -3,12 +3,19 @@
 }
 
 body {
-  padding: 20px;
+  padding: 30px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+
+}
+
+.bodyBackground {
+  background-image: linear-gradient(#0c37e3 10%, #003CFFFF, #006FFFFF, #00B7FF);
+  min-height: 100vh; /*this changes the height/amount of the gradients that are present*/
 }
 
 a {
-  color: #00B7FF;
+  color: #0095ff;
   text-decoration: none;
 
 }
@@ -17,11 +24,18 @@ a {
   text-align: center;
   font: 40px "Lucida Grande", Helvetica, Arial, sans-serif;
 
+
+}
+
+.footerStyling {
+  position: relative;
+
 }
 
 .navStyling {
   text-align: center;
   flex: fit-content;
+
 
 }
 
@@ -35,9 +49,40 @@ a {
 .formStuff {
   /*flex: auto;*/
   padding: 10px;
-  background: hsl(150, 50%, 50%);
+  background: rgba(89, 91, 134, 0.9);
+  border-color: black;
+  border-width: 10em;
   text-align: center;
   border-radius: 1em;
+  max-width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 10em;
+
+}
+
+.formLayout {
+  margin-top: 5px;
+  padding-right: 20%;
+  padding-left: 20%;
+  grid-auto-columns: auto;
+  display: flex;
+  flex: border-box;
+  flex-wrap: wrap; /* allows for the inputs to be below when the screen is smaller*/
+  justify-content: space-between;
+}
+
+.imageSection {
+  padding-top: 1em;
+  display: flex;
+  flex-direction: column;
+  background: rgba(89, 91, 134, 0.9);
+  border-radius: 1em;
+  border-width: 10em;
+  min-height: 100%;
+  justify-content: center;
+  align-items: center;
 
 }
 
@@ -46,6 +91,14 @@ a {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: rgba(21,52,43,0.54);
 
 }
 
+.inputBoxes {
+  border-radius: 10em;
+  text-align: center;
+
+  /*figuring out how to do this alignment*/
+
+}
