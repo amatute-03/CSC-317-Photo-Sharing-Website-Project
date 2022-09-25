@@ -3,7 +3,7 @@
 }
 
 body {
-  padding: 30px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: white;
 
@@ -12,6 +12,11 @@ body {
 .bodyBackground {
   background-image: linear-gradient(#0c37e3 10%, #003CFFFF, #006FFFFF, #00B7FF);
   min-height: 100vh; /*this changes the height/amount of the gradients that are present*/
+
+  /*display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100vw;*/
 }
 
 a {
@@ -34,8 +39,11 @@ a {
 
 .navStyling {
   text-align: center;
-  flex: fit-content;
-
+  /*flex: fit-content;*/
+  background: rgba(86, 77, 105, 0.6);
+  padding: 10px 0px 10px 0px;
+  min-width: 90%;
+  font: bold 14px Arial;
 
 }
 
@@ -44,21 +52,25 @@ a {
   text-decoration: none;
   padding: 0px 10px 0px 10px;
   padding-inline-end: 5vw;
+
 }
 
 .formStuff {
   /*flex: auto;*/
   padding: 10px;
   background: rgba(89, 91, 134, 0.9);
-  border-color: black;
-  border-width: 10em;
+  /*border-color: black;*/
+  /*border-width: 10em;*/
   text-align: center;
   border-radius: 1em;
-  max-width: 70%;
-  display: block;
+  max-width: 700px;
+  /*display: block;*/
   margin-left: auto;
   margin-right: auto;
-  border-bottom: 10em;
+  /*border-bottom: 10em;*/
+  box-shadow: 1em 1em rgba(46,46,46,0.73);
+  /*min-height: 75vh;*/
+
 
 }
 
@@ -70,19 +82,26 @@ a {
   display: flex;
   flex: border-box;
   flex-wrap: wrap; /* allows for the inputs to be below when the screen is smaller*/
-  justify-content: space-between;
+  justify-content: center;
+
 }
 
 .imageSection {
   padding-top: 1em;
-  display: flex;
-  flex-direction: column;
-  background: rgba(89, 91, 134, 0.9);
+  padding-bottom: 1em;
+  display: block;
+  text-align: center;
+  box-shadow: 1em 1em rgba(46,46,46,0.73);
+
   border-radius: 1em;
   border-width: 10em;
   min-height: 100%;
   justify-content: center;
   align-items: center;
+
+  background: rgba(89, 91, 134, 0.9);
+  /*background: linear-gradient(to top right, rgba(21,52,43,0.54), rgba(11, 232, 163, 0.54));*/
+
 
 }
 
@@ -91,14 +110,29 @@ a {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: rgba(21,52,43,0.54);
+  /*box-shadow: rgba(21,52,43,0.54);*/
+  /*background-image: linear-gradient(to top right, rgba(21,52,43,0.54), rgba(11, 232, 163, 0.54));*/
 
 }
 
 .inputBoxes {
   border-radius: 10em;
   text-align: center;
+  max-width: 180px;
 
+  /*background: black;*/
   /*figuring out how to do this alignment*/
 
 }
+
+.formText {
+  text-align: left;
+  width: 175px;
+  background: none;
+}
+
+.filePicker {
+  /*background: black;*/
+  max-width: 175px;
+}
+
