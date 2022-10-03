@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <section><header><b>Login Page</b></header></section>
-    <nav>
-        <a href="index.html">index</a> <a href="login.html">login</a> <a href="registration.html">registration</a> <a href="postimage.html">post image</a> <a href="viewpost.html">view post</a>
+    <section><header class="headerStyling"><b>Login Page</b></header></section>
+    <nav class="navStyling">
+        <a class="navLinks" href="index.html">index</a> <a class="navLinks currentNav" href="login.html">login</a> <a class="navLinks" href="registration.html">registration</a> <a  class="navLinks" href="postimage.html">post image</a> <a class="navLinks" href="viewpost.html">view post</a>
     </nav>
-
-    <img src="https://fakeimg.pl/350x200/?text=World&font=lobster" alt="broken">
-
-    <form action="index.html" method="get">
-        <label>Username <input required></label> <br>
-        <label>Password <input type="password" required></label> <br>
-        <button type="submit"> submit </button>
-    </form>
+    <br><br>
+    <main>
+        <form class="formStuff" action="index.html" method="get">
+            <label class="formLayout"><span class="formText">Username</span> <input class="inputBoxes" required></label> <br>
+            <label class="formLayout"><span class="formText">Password</span> <input class="inputBoxes" type="password" required></label> <br>
+            <button class="submitButtons" type="submit"> submit </button>
+        </form>
+    </main>
+    <br><br>
+    <footer class="footerStyling">©2022 Adan Matute</footer>
 </body>
 </html>

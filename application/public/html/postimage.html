@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Post Image</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <section><header><b>Post Image</b></header></section>
-    <nav>
-        <a href="index.html">index</a> <a href="login.html">login</a> <a href="registration.html">registration</a> <a href="postimage.html">post image</a> <a href="viewpost.html">view post</a>
+    <section><header class="headerStyling"><b>Post Image</b></header></section>
+    <nav class="navStyling">
+        <a class="navLinks" href="index.html">index</a> <a class="navLinks" href="login.html">login</a> <a class="navLinks" href="registration.html">registration</a> <a class="navLinks currentNav" href="postimage.html">post image</a> <a class="navLinks" href="viewpost.html">view post</a>
     </nav>
-    <section>a page to upload images into the site</section>
-    <br>
-    <form>
-        <label>Enter Post Title <input type="text" required></label> <br>
-        <label>Enter Post Description <input type="text" required></label> <br>
-        <label>Enter Image(s) <input type="file" accept="image/*" required></label> <br>
-        <label><input type="checkbox" required> accept our <a href="">Acceptable Use Policy</a> for uploading images</label> <br>
-        <button type="submit">submit</button>
-    </form>
+    <br><br>
+    <main>
+        <form class="formStuff" action="viewpost.html">
+            <label class="formLayout"><span class="formText">Enter Post Title</span><input class="inputBoxes" type="text" required></label> <br>
+            <label class="formLayout"><span class="formText">Enter Post Description</span><input class="inputBoxes" type="text" required></label> <br>
+            <label class="formLayout"><span class="formText"> Enter Image(s)</span><input class="filePicker" type="file" accept="image/*" required></label> <br>
+            <label class="checkLabel"><input class="checker" type="checkbox" required> accept our <a href="">Acceptable Use Policy</a> for uploading images</label> <br>
+            <button class="submitButtons" type="submit">submit</button>
+        </form>
+    </main>
+    <br><br>
+    <footer class="footerStyling">©2022 Adan Matute</footer>
 </body>
 </html>
