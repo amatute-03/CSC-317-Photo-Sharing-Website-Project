@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script defer type="text/javascript" src="../js/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -13,13 +15,16 @@
     <br><br>
     <main>
         <form class="formStuff" action="login.html">
-            <label class="formLayout"><span class="formText">Username</span><input class="inputBoxes" type="text" required></label><br>
-            <label class="formLayout"><span class="formText">Email</span><input class="inputBoxes" type="text" required></label><br>
-            <label class="formLayout"><span class="formText">Password</span><input class="inputBoxes" type="password" required></label><br>
-            <label class="formLayout"><span class="formText">Password Confirmation</span><input class="inputBoxes" type="password" required></label><br>
+            <label class="formLayout"><span class="formText">Username</span><input id="username" class="inputBoxes" type="text" required></label>
+            <div id="useC"><div id="useD">Capital first</div> <div id="useE">3 characters</div> <div id="useF">Numbers/Letters</div></div><br>
+            <label class="formLayout"><span class="formText">Email</span><input class="inputBoxes" type="email" required></label><br><br>
+            <label class="formLayout"><span class="formText">Password</span><input id="password" class="inputBoxes" type="password" required></label>
+            <div id="pass"><div id="length">8 characters</div> <div id="cap">1 capital</div> <div id="num">1 number</div> <div id="spec">1 special character</div></div><br>
+            <label class="formLayout"><span class="formText">Password Confirmation</span><input id="passwordConfirm" class="inputBoxes" type="password" required></label>
+            <div id="passC"><div id="passD">passwords match</div></div><br><br>
             <label><input class="checker" type="checkbox" required> I am 13+ years of age</label><br><br>
             <label><input class="checker" type="checkbox" required> I agree with the <a href="">TOS and Privacy Rules</a></label><br><br>
-            <button class="submitButtons">submit</button><br>
+            <button id="submit" class="submitButtons">submit</button><br>
         </form>
     </main>
     <br><br>
