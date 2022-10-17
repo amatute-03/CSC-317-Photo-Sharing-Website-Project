@@ -44,12 +44,12 @@ document.getElementById('username').addEventListener('input', function (e) {
 
     if (firstChar && length && alphanumerical === 0 && targetValue.length > 0) {
         target.style.color = '#17d017'
-        unSwitch = true
-        button()
+        unSwitch = true;
+        button();
     } else {
         target.style.color = '#ff6969'
-        unSwitch = false
-        button()
+        unSwitch = false;
+        button();
     }
 });
 
@@ -69,7 +69,7 @@ document.getElementById("password").addEventListener('input', function (e) {
     let length = false;
     if(targetValue.length > 7) {
         length = true;
-    };
+    }
 
     let capitals = 0, specialChars = 0, numbers = 0;
     for (let a in targetValue) {
@@ -104,12 +104,12 @@ document.getElementById("password").addEventListener('input', function (e) {
 
     if (capitals < 1 || specialChars < 1 || numbers < 1 || !length) {
         target.style.color = '#ff6969';
-        pwSwitch = false
-        button()
+        pwSwitch = false;
+        button();
     } else {
         target.style.color = '#17d017';
-        pwSwitch = true
-        button()
+        pwSwitch = true;
+        button();
     }
 });
 
@@ -123,18 +123,18 @@ document.getElementById('passwordConfirm').addEventListener('input', function (e
         e.target.style.color ='#17d017';
         document.getElementById('passD').style.color ='#17d017';
         document.getElementById('passD').innerText = 'matching';
-        pwcSwitch = true
-        button()
+        pwcSwitch = true;
+        button();
     } else if (!pwSwitch) {
         e.target.style.color ='#ff6969';
         document.getElementById("passD").innerText = 'not a valid password';
-        pwcSwitch = false
-        button()
+        pwcSwitch = false;
+        button();
     } else {
         e.target.style.color ='#ff6969';
         document.getElementById("passD").innerText = 'not matching';
-        pwcSwitch = false
-        button()
+        pwcSwitch = false;
+        button();
     }
 });
 
