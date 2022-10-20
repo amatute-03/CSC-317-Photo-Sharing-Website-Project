@@ -280,17 +280,6 @@ a {
 }*/
 
 
-#username {
-
-}
-#password {
-
-}
-#passwordConfirm {
-
-}
-
-
 #pass {
   font: bold 12px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: flex;
@@ -303,11 +292,6 @@ a {
   opacity: 0;
   margin: auto;
 }
-#length {}
-#cap {}
-#num {}
-#spec {}
-#submit {}
 
 #passC {
   font: bold 12px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -321,9 +305,6 @@ a {
   opacity: 0;
   margin: auto;
 }
-#passD {}
-#passMNM {}
-
 
 #useC {
   font: bold 12px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -337,11 +318,6 @@ a {
   opacity: 0;
   margin: auto;
 }
-#useD {}
-#useE {}
-#useF {}
-
-
 
 
 #indexCardDiv {
@@ -370,7 +346,7 @@ a {
   text-align: center;
 }
 
-.null {
+.cards {
   width: 10rem;
   height: auto;
   min-height: 100%;
@@ -379,39 +355,7 @@ a {
   box-shadow: rgb(63, 70, 99) 0.75rem 0.75rem;
   margin: 1.5rem;
   position: relative;
-}
 
-
-.null:hover {
-  background: rgb(57, 61, 89);
-  box-shadow: rgb(73, 80, 129) 0.5rem 0.5rem,
-              rgb(63, 70, 99) 1rem 1rem;
-  transition: 250ms ease;
-  cursor: pointer;
-}
-
-
-
-
-.null:active {
-  top: 2px;
-  left: 2px;
-  box-shadow: rgb(73, 80, 129) 0.5rem 0.5rem;
-  opacity: 1;
-  transition: 250ms ease;
-}
-
-
-
-
-
-.indexImageScaling {
-  width: 90%;
-  display: block;
-  margin: auto;
-}
-
-.what {
   text-align: center;
   top: 0;
   padding: 1.75rem 0 0.5rem 0;
@@ -421,14 +365,30 @@ a {
   user-select: none;
 }
 
+
+.cards:hover {
+  background: rgb(57, 61, 89);
+  box-shadow: rgb(73, 80, 129) 0.5rem 0.5rem,
+              rgb(63, 70, 99) 1rem 1rem;
+  transition: 250ms ease;
+  cursor: pointer;
+}
+
+.cards:active {
+  top: 2px;
+  left: 2px;
+  box-shadow: rgb(73, 80, 129) 0.5rem 0.5rem;
+  transition: 250ms ease;
+}
+
+
 .indexBlockTexts {
   font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
   padding: 10px;
-  bottom: 0;
 }
 
-#hello {
-  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+#cardCounterText {
+  font-size: 18px;
   color: #000;
 }
 
