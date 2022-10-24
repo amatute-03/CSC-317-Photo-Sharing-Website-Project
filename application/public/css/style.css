@@ -46,6 +46,8 @@ a {
   border-radius: 1rem;
   text-align: center;
   margin: auto 1rem 0 1rem;
+  position: sticky;
+  bottom: 0.5rem;
 }
 
 .navStyling {
@@ -279,34 +281,7 @@ a {
   }
 }*/
 
-
-#pass {
-  font: bold 12px "Lucida Grande", Helvetica, Arial, sans-serif;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  max-width: 300px;
-  padding-top: 10px;
-  height: 0;
-  opacity: 0;
-  margin: auto;
-}
-
-#passC {
-  font: bold 12px "Lucida Grande", Helvetica, Arial, sans-serif;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  max-width: 300px;
-  padding-top: 10px;
-  height: 0;
-  opacity: 0;
-  margin: auto;
-}
-
-#useC {
+.registrationChecksStyle {
   font: bold 12px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: row;
@@ -333,8 +308,10 @@ a {
   max-width: 1200px;
   height: auto;
   border-radius: 1rem;
-  background: rgb(230, 219, 181);
-  box-shadow: rgb(145, 181, 177) 1rem 1rem;
+  /*background: rgb(230, 219, 181);
+  box-shadow: rgb(145, 181, 177) 1rem 1rem;*/
+  background: rgb(111, 114, 168);
+  box-shadow: rgb(78, 86, 124) 1rem 1rem;
   margin: 3rem;
   position: relative;
   justify-content: space-evenly;
@@ -355,9 +332,8 @@ a {
   box-shadow: rgb(63, 70, 99) 0.75rem 0.75rem;
   margin: 1.5rem;
   position: relative;
-
   text-align: center;
-  top: 0;
+  /*top: 0;*/
   padding: 1.75rem 0 0.5rem 0;
   font-size: 16px;
   font-weight: bold;
@@ -386,10 +362,3 @@ a {
   font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
   padding: 10px;
 }
-
-#cardCounterText {
-  font-size: 18px;
-  color: #000;
-}
-
-

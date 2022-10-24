@@ -2,13 +2,12 @@ function button() {
     document.getElementById('submit').disabled = !unSwitch || !pwSwitch || !pwcSwitch;
 }
 
-
 let unSwitch = false;
 document.getElementById('username').addEventListener('input', function (e) {
-    document.getElementById('useC').style.opacity = '1';
-    document.getElementById('useD').style.color ='#ff6969';
-    document.getElementById('useE').style.color ='#ff6969';
-    document.getElementById('useF').style.color ='#ff6969';
+    document.getElementById('usernameRequirements').style.opacity = '1';
+    document.getElementById('usernameCapitals').style.color ='#ff6969';
+    document.getElementById('usernameLength').style.color ='#ff6969';
+    document.getElementById('usernameAlphanumerical').style.color ='#ff6969';
 
     let target = e.target;
     let targetValue = target.value;
@@ -29,17 +28,17 @@ document.getElementById('username').addEventListener('input', function (e) {
         }
     }
     if (alphanumerical > 0) {
-        document.getElementById('useF').style.color ='#ff6969';
+        document.getElementById('usernameAlphanumerical').style.color ='#ff6969';
     }
 
     if (firstChar) {
-        document.getElementById('useD').style.color ='#17d017';
+        document.getElementById('usernameCapitals').style.color ='#17d017';
     }
     if (length) {
-        document.getElementById('useE').style.color ='#17d017';
+        document.getElementById('usernameLength').style.color ='#17d017';
     }
     if (alphanumerical === 0 && targetValue.length > 0) {
-        document.getElementById('useF').style.color ='#17d017';
+        document.getElementById('usernameAlphanumerical').style.color ='#17d017';
     }
 
     if (firstChar && length && alphanumerical === 0 && targetValue.length > 0) {
@@ -53,15 +52,14 @@ document.getElementById('username').addEventListener('input', function (e) {
     }
 });
 
-
 let pwSwitch = false;
 document.getElementById("password").addEventListener('input', function (e) {
 
-    document.getElementById('pass').style.opacity = '1';
-    document.getElementById('length').style.color ='#ff6969';
-    document.getElementById('cap').style.color ='#ff6969';
-    document.getElementById('num').style.color ='#ff6969';
-    document.getElementById('spec').style.color ='#ff6969';
+    document.getElementById('passwordRequirements').style.opacity = '1';
+    document.getElementById('passwordLength').style.color ='#ff6969';
+    document.getElementById('passwordCaps').style.color ='#ff6969';
+    document.getElementById('passwordNumbers').style.color ='#ff6969';
+    document.getElementById('passwordSpecial').style.color ='#ff6969';
 
     let target = e.target;
     let targetValue = target.value;
@@ -90,16 +88,16 @@ document.getElementById("password").addEventListener('input', function (e) {
     }
 
     if (length) {
-        document.getElementById('length').style.color ='#17d017';
+        document.getElementById('passwordLength').style.color ='#17d017';
     }
     if (capitals > 0) {
-        document.getElementById('cap').style.color ='#17d017';
+        document.getElementById('passwordCaps').style.color ='#17d017';
     }
     if (specialChars > 0) {
-        document.getElementById('spec').style.color ='#17d017';
+        document.getElementById('passwordSpecial').style.color ='#17d017';
     }
     if (numbers > 0) {
-        document.getElementById('num').style.color ='#17d017';
+        document.getElementById('passwordNumbers').style.color ='#17d017';
     }
 
     if (capitals < 1 || specialChars < 1 || numbers < 1 || !length) {
@@ -113,26 +111,25 @@ document.getElementById("password").addEventListener('input', function (e) {
     }
 });
 
-
 let pwcSwitch = false
 document.getElementById('passwordConfirm').addEventListener('input', function (e) {
-    document.getElementById('passC').style.opacity = '1';
-    document.getElementById('passD').style.color ='#ff6969';
+    document.getElementById('passwordConfirmationRequirements').style.opacity = '1';
+    document.getElementById('passwordMatch').style.color ='#ff6969';
 
     if (document.getElementById('password').value === e.target.value && pwSwitch) {
         e.target.style.color ='#17d017';
-        document.getElementById('passD').style.color ='#17d017';
-        document.getElementById('passD').innerText = 'matching';
+        document.getElementById('passwordMatch').style.color ='#17d017';
+        document.getElementById('passwordMatch').innerText = 'matching';
         pwcSwitch = true;
         button();
     } else if (!pwSwitch) {
         e.target.style.color ='#ff6969';
-        document.getElementById("passD").innerText = 'not a valid password';
+        document.getElementById("passwordMatch").innerText = 'not a valid password';
         pwcSwitch = false;
         button();
     } else {
         e.target.style.color ='#ff6969';
-        document.getElementById("passD").innerText = 'not matching';
+        document.getElementById("passwordMatch").innerText = 'not matching';
         pwcSwitch = false;
         button();
     }

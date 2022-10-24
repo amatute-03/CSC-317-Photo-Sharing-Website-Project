@@ -1,4 +1,4 @@
-var cards = 0;
+let cards = 0;
 
 (function fetchPhotos() {
     fetch("https://jsonplaceholder.typicode.com/albums/2/photos")
@@ -19,6 +19,7 @@ var cards = 0;
             let count = document.createElement('p')
 
             count.setAttribute('id', 'cardCounterText')
+            count.style.fontSize = '18px';
             count.innerText = "Photos Displayed: " + cards
 
             cardsAndCounter.appendChild(count)
@@ -36,8 +37,20 @@ function buildCardsUsingJSAPI(bin, data) {
     div.setAttribute('class', 'cards')
 
     div.addEventListener('click', (e) => {
+        let target = e.currentTarget
+        e.currentTarget.style.opacity = 1
+
+        let fade = setInterval(function () {
+            if (target.style.opacity > 0) {
+                target.style.opacity -= 0.1;
+            }
+            else {
+                clearInterval(fade);
+                target.remove()
+            }
+        }, 25);
+
         e.currentTarget.style.pointerEvents = "none";
-        fadeOut(e)
         document.getElementById('cardCounterText').innerText = "Photos Displayed: " + --cards
     })
 
@@ -55,23 +68,4 @@ function buildCardsUsingJSAPI(bin, data) {
     div.appendChild(title)
 
     bin.appendChild(div)
-}
-
-function fadeOut(e) {
-    var target = e.currentTarget
-    var change = 1;
-
-    var fade = setInterval(function () {
-        change += 0.15
-        if (!target.style.opacity) {
-            target.style.opacity = 1;
-        }
-        if (target.style.opacity > 0) {
-            target.style.opacity = 2 - change;
-        }
-        else {
-            clearInterval(fade);
-            target.remove()
-        }
-    }, 25);
 }
