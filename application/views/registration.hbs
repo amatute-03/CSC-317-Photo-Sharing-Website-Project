@@ -1,0 +1,17 @@
+<script defer type="text/javascript" src="public/js/registrationScript.js"></script>
+
+<main>
+    <form class="formStuff" action="/login">
+        <label class="formLayout"><span class="formText">Username</span><input id="username" class="inputBoxes" type="text" required></label>
+        <div id="usernameRequirements" class="registrationChecksStyle"><div id="usernameCapitals">Capital first</div> <div id="usernameLength">3 characters</div> <div id="usernameAlphanumerical">Numbers/Letters</div></div><br>
+        <label class="formLayout"><span class="formText">Email</span><input class="inputBoxes" type="email" required></label><br><br>
+        <label class="formLayout"><span class="formText">Password</span><input id="password" class="inputBoxes" type="password" required></label>
+        <div id="passwordRequirements" class="registrationChecksStyle"><div id="passwordLength">8 characters</div> <div id="passwordCaps">1 capital</div> <div id="passwordNumbers">1 number</div> <div id="passwordSpecial">1 special character</div></div><br>
+        <label class="formLayout"><span class="formText">Password Confirmation</span><input id="passwordConfirm" class="inputBoxes" type="password" required></label>
+        <div id="passwordConfirmationRequirements" class="registrationChecksStyle"><div id="passwordMatch">passwords match</div></div><br><br>
+        <label><input class="checker" type="checkbox" required> I am 13+ years of age</label><br><br>
+        <label><input class="checker" type="checkbox" required> I agree with the <a href="">TOS and Privacy Rules</a></label><br><br>
+        <button id="submit" class="submitButtons">submit</button><br>
+    </form>
+</main>
+
