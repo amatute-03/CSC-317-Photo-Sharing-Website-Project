@@ -1,11 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{{title}}</title>
+<head>
+    <title>CSC 317 App - {{title}}</title>
     <link rel="icon" href="/public/favicon.ico" sizes="70x70" type="image/ico">
-    <link rel='stylesheet' href='/public/css/style.css' />
-  </head>
-  <body>
+    <link rel='stylesheet' href='/public/css/style.css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <section><header class="headerStyling"><b>{{head}}</b></header></section>
+
+    <nav class="navStyling">
+        <a class="navLinks" href="/index">index</a>
+        <a class="navLinks" href="/login">login</a>
+        <a class="navLinks" href="/registration">registration</a>
+        <a class="navLinks" href="/postimage">post image</a>
+        <a class="navLinks" href="/viewpost">view post</a>
+    </nav>
+
+    <br><br>
     {{{body}}}
-  </body>
-</html>
+    <br><br>
+
+    <footer class="footerStyling">©2022 Adan Matute</footer>
+
+</body>
