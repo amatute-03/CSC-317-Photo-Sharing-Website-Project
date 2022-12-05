@@ -1,8 +1,17 @@
 <main>
-    <form class="formStuff" action="/viewpost">
-        <label class="formLayout"><span class="formText">Enter Post Title</span><input class="inputBoxes" type="text" required></label> <br>
-        <label class="formLayout"><span class="formText">Enter Post Description</span><input class="inputBoxes" type="text" required></label> <br>
-        <label class="formLayout"><span class="formText"> Enter Image(s)</span><input class="filePicker" type="file" accept="image/*" required></label> <br>
+    <form class="formStuff" action="/posts/create" method="post" enctype="multipart/form-data">
+        <label class="formLayout"><span class="formText">Enter Post Title</span><input class="inputBoxes" type="text"
+                                                                                       required
+                                                                                       placeholder="Title"
+                                                                                       name="title"></label> <br>
+        <label class="formLayout"><span class="formText">Enter Post Description</span><input class="inputBoxes"
+                                                                                             type="text" required
+                                                                                             placeholder="Description"
+                                                                                                name="description"></label>
+        <br>
+        <label class="formLayout"><span class="formText"> Enter Image(s)</span><input class="filePicker" type="file"
+                                                                                      accept="image/*" required
+                                                                                      name="uploadImage"></label> <br>
         <label class="checkLabel"><input class="checker" type="checkbox" required> accept our <a href="">Acceptable Use Policy</a> for uploading images</label> <br>
         <button class="submitButtons" type="submit">submit</button>
     </form>

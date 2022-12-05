@@ -69,3 +69,28 @@ function buildCardsUsingJSAPI(bin, data) {
 
     bin.appendChild(div)
 }
+
+
+
+
+
+/*
+    <!--<div class="indexIconDiv">
+        <div class="indexIcons">
+            <img class="indexIconImages" src="../public/images/login.png" alt="dead">
+            <a href="/login"><div class="indexIconTexts">login</div></a>
+        </div>
+        <div class="indexIcons">
+            <img class="indexIconImages" src="../public/images/register.png" alt="dead">
+            <a href="/registration"><div class="indexIconTexts">register</div></a>
+        </div>
+        <div class="indexIcons">
+            <img class="indexIconImages" src="../public/images/post.png" alt="dead">
+            <a href="/postimage"><div class="indexIconTexts">post</div></a>
+        </div>
+        <div class="indexIcons">
+            <img class="indexIconImages" src="../public/images/view.png" alt="dead">
+            <a href="/viewpost"><div class="indexIconTexts">view</div></a>
+        </div>
+    </div>-->
+ */

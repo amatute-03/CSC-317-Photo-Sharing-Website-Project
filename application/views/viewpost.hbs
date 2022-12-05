@@ -1,11 +1,13 @@
-<script defer type="text/javascript" src="public/js/viewpostScript.js"></script>
-
+<script defer type="text/javascript" src="../public/js/viewpostScript.js"></script>
+{{log this}}
 <main id="postsMain">
     <section class="imageSection">
-        <b>Jellyfish</b> - Joey <br><br>
-        <img class="imageScaling" src="../public/images/jellyfish2.png" alt="jellyfish">
-        <br>Jellyfish Swimming<br>
-        <i>09/05/2022</i> <br>
+
+        <b>{{currentPost.title}}</b> - {{currentPost.username}} <br><br>
+        <img class="imageScaling" src="/{{currentPost.image}}" alt="dead image">
+        <br>{{currentPost.description}}<br>
+        <i>{{formatDate currentPost.createdAt}}</i> <br>
+
     </section>
     <div id="commentDiv"></div>
 </main>

@@ -16,7 +16,7 @@ async function getConnection() {
     return await mysql.createConnection({
         host: "localhost",
         //TODO make sure to change to the user you want to use
-        user: "csc317db", //Your DB username
+        user: "root", //Your DB username
         //TODO make sure to change to the correct password for your user.
         password: "password", //Your DB password
     });
@@ -47,7 +47,7 @@ async function makeUsersTable(connection) {
         'UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,' +
         'UNIQUE INDEX username_UNIQUE (username ASC) VISIBLE,' +
         'UNIQUE INDEX email_UNIQUE (email ASC) VISIBLE)' +
-        'ENGINE = InnoDB'
+        'ENGINE = InnoDB;'
 
     );
 
@@ -66,7 +66,7 @@ async function makePostsTable(connection) {
         'CREATE TABLE IF NOT EXISTS csc317db.posts ('+
           'id INT NOT NULL AUTO_INCREMENT,'+
           'title VARCHAR(128) NOT NULL,'+
-          'description` TEXT NOT NULL,'+
+          'description TEXT NOT NULL,'+
           'image VARCHAR(4096) NOT NULL,'+
           'thumbnail VARCHAR(4096) NOT NULL,'+
           'fk_authorId INT NOT NULL,'+
@@ -74,15 +74,12 @@ async function makePostsTable(connection) {
           'PRIMARY KEY (id),'+
           'UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,'+
           'INDEX postAuthor_idx (fk_authorId ASC) VISIBLE,'+
-          'CONSTRAINT postAuthor'+
-            'FOREIGN KEY (fk_authorId)'+
-            'REFERENCES csc317db.users (id)'+
-            'ON DELETE NO ACTION'+
-            'ON UPDATE NO ACTION)'+
-        'ENGINE = InnoDB'
-
-
-
+          'CONSTRAINT postAuthor '+
+            'FOREIGN KEY (fk_authorId) '+
+            'REFERENCES csc317db.users (id) '+
+            'ON DELETE NO ACTION '+
+            'ON UPDATE NO ACTION) '+
+        'ENGINE = InnoDB;'
     );
     if (result && result.warningStatus > 0) {
         const [warningResult, _] = await connection.query("SHOW WARNINGS");
@@ -96,27 +93,29 @@ async function makeCommentsTable(connection) {
     const [result, _] = await connection.query(
         // Comments Table SQL Goes here
 
+
         'CREATE TABLE IF NOT EXISTS csc317db.comments ('+
-          'id INT NOT NULL AUTO_INCREMENT,'+
-          'text TEXT NOT NULL,'+
-          'fk_autorId INT NOT NULL,'+
-          'fk_postId INT NOT NULL,'+
-          'createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,'+
-          'PRIMARY KEY (id),'+
-          'UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,'+
-          'INDEX commentAuthor_idx (fk_autorId ASC) VISIBLE,'+
-          'INDEX commentPost_idx (fk_postId ASC) VISIBLE,'+
-          'CONSTRAINT commentAuthor'+
-            'FOREIGN KEY (fk_autorId)'+
-            'REFERENCES csc317db.users (id)'+
-            'ON DELETE NO ACTION'+
-            'ON UPDATE NO ACTION,'+
-          'CONSTRAINT commentPost'+
-            'FOREIGN KEY (fk_postId)'+
-            'REFERENCES csc317db.posts (id)'+
-            'ON DELETE NO ACTION'+
-            'ON UPDATE NO ACTION)'+
-        'ENGINE = InnoDB'
+            'id INT NOT NULL AUTO_INCREMENT,'+
+            'text TEXT NOT NULL, '+
+            'fk_authorId INT NOT NULL, '+
+            'fk_postId INT NOT NULL, '+
+            'createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, '+
+            'PRIMARY KEY(id), '+
+            'UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE, '+
+            'INDEX commentAuthor_idx (fk_authorId ASC) VISIBLE, '+
+            'INDEX commentPost_idx (fk_postId ASC) VISIBLE, '+
+            'CONSTRAINT commentAuthor '+
+                'FOREIGN KEY (fk_authorId) '+
+                'REFERENCES csc317db.users (id) '+
+                'ON DELETE NO ACTION '+
+                'ON UPDATE NO ACTION, '+
+            'CONSTRAINT commentPost '+
+                'FOREIGN KEY (fk_postId) '+
+                'REFERENCES csc317db.posts (id) '+
+                'ON DELETE NO ACTION '+
+                'ON UPDATE NO ACTION) '+
+        'ENGINE = InnoDB; '
+
     
     );
     if (result && result.warningStatus > 0) {
