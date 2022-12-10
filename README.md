@@ -19,9 +19,11 @@ Please follow the instructions below and fill in the information requested when 
 # Build/Run Instructions
 
 ## Build Instructions
-1. steps here
-2. steps here
+1. open the terminal and navigate to the application folder
+2. use `npm install` to install necessary packages
+3. use `npm run builddb` to create the csc317db used to store information
 
 ## Run Instructions
-1. steps here
-2. steps here 
+1. open ther terminal and navigate to the application folder
+2. run `npm start`
+3. open your browser and head to `localhost:3000` to view the site
