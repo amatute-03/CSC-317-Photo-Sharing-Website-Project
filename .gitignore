@@ -68,3 +68,5 @@ typings/
 
 #node modules
 .node_modules
+
+public/images/uploads

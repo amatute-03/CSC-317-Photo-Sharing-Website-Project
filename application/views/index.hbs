@@ -1,19 +1,14 @@
-<!--<script defer type="text/javascript" src="public/js/indexScript.js"></script>-->
 <div>
-    <main>
-        <section class="indexMain">A site to post and view images</section>
-    </main>
-    <br>
     <div id="indexCardDivAll">
         <div id="indexCardDiv">
-    {{#each results}}
-        <div class="cards" id="">
-            <img class="imageScaling" src="{{this.thumbnail}}">
-            <p class="indexBlockTexts">{{this.title}}</p>
-            <p class="indexBlockTexts">{{this.description}}</p>
-            <a href="/posts/{{this.id}}">view this post</a>
-        </div>
-    {{/each}}
+            {{#each results}}
+                <div class="cards">
+                    <img class="imageScaling" src="/{{this.thumbnail}}">
+                    <p class="indexBlockTexts">{{this.title}}</p>
+                    <!--<p class="indexBlockTexts">{{this.description}}</p>-->
+                    <a href="/posts/{{this.id}}">details</a>
+                </div>
+            {{/each}}
         </div>
     </div>
 </div>

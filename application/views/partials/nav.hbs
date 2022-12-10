@@ -2,8 +2,12 @@
 <nav id="navbar" class="navStyling">
     <a class="navLinks" href="/index">index</a>
     <a class="navLinks" href="/registration">registration</a>
+    <form method="GET" action="/posts/search" enctype="application/x-www-form-urlencoded" style="margin: 0">
+        <input id="navSearch" class="inputBoxes" type="text" name="searchText" value="{{searchValue}}">
+        <button class="submitButtons" style="height: 1.5rem" type="submit">search</button>
+    </form>
     <a class="navLinks" href="/postimage">post image</a>
-    <a class="navLinks" href="/viewpost">view post</a>
+    <!--<a class="navLinks" href="/viewpost">view post</a>-->
     {{#if isLoggedIn}}
         <a id="logoutButton" class="navLinks">log out</a>
     {{else}}

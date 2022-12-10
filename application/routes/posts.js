@@ -28,8 +28,7 @@ router.post('/create', upload.single('uploadImage'), function (req, res, next) {
         .resize({width:200, height:200, fit:"cover"})
         .toFile(destinationOfThumbnail)
         .then(function() {
-            let baseSQL = 'insert into posts (title, description, image, thumbnail, fk_authorId)' +
-                'values (?,?,?,?,?)'
+            let baseSQL = 'insert into posts (title, description, image, thumbnail, fk_authorId) value (?,?,?,?,?)'
             return db.query(baseSQL, [title, description, uploadedFile, destinationOfThumbnail, userId])
         })
         .then(function([results, fields]) {
@@ -44,8 +43,18 @@ router.post('/create', upload.single('uploadImage'), function (req, res, next) {
 })
 
 router.get('/search', function (req, res, next) {
-    console.log(req.query);
-    res.render('index')
+    let searchTerm = '%'+req.query.searchText+'%';
+    let originalTerm = req.query.searchText;
+    console.log(searchTerm)
+    let baseSQL = "select id, title, description, thumbnail, concat_ws(\" \", title, description) as haystack from csc317db.posts having haystack like ?"
+    db.execute(baseSQL, [searchTerm])
+        .then(function ([results, fields]) {
+            res.locals.results = results
+            res.locals.searchValue = originalTerm
+            req.flash('success', results.length + ' results found')
+            req.session.save(function(saveErr){res.render('index', { title: 'Posts', head:"Searched Posts"})})
+        })
+        .catch(err => next(err));
 })
 
 

@@ -1,3 +1,33 @@
+document.getElementById('commentButton').addEventListener("click", function(e) {
+    let commentTextArea = document.getElementById('textArea')
+    let commentText = commentTextArea.innerText;
+    let postId = e.currentTarget.dataset.postid;
+
+    if(!commentText) return;
+
+    fetch('/comments/create', {
+        method: 'POST',
+        headers: {
+            "Content-type": "Application/json"
+        },
+        body: JSON.stringify({
+            comment: commentText,
+            postId: postId
+        })
+    })
+    .then(response => response.json())
+    .then(res_json => {
+        console.log(res_json)
+        window.location.reload()
+    })
+    .catch(err =>console.log(err))
+
+
+})
+
+
+
+/*
 let commentsDiv = document.getElementById("commentDiv")
 
 let placeholderImageCounter = 0
@@ -53,7 +83,7 @@ for (i = 0; i < 4; i++) {
     //    e.currentTarget.remove()
     //})
 
-    commentsDiv.appendChild(comment)
+    //commentsDiv.appendChild(comment)              //adds the comments themselves to the div(autogen not created)
 }
 
 let newCommentDiv = document.createElement('form')
@@ -78,7 +108,7 @@ sub.innerText = 'submit'
 
 newCommentDiv.appendChild(sub)
 
-commentsDiv.appendChild(newCommentDiv)
+//commentsDiv.appendChild(newCommentDiv)                adds the textbox and button to the div
 
 
 /*

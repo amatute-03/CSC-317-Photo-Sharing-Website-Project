@@ -1,4 +1,4 @@
-<!--<script defer type="text/javascript" src="public/js/registrationScript.js"></script>-->
+<script defer type="text/javascript" src="public/js/registrationScript.js"></script>-
 
 <main>
     <form class="formStuff"
@@ -12,7 +12,8 @@
                 type="text"
                 required
                 placeholder="Username"
-                name="username">
+                name="username"
+                maxlength="64">
         </label>
         <div id="usernameRequirements"
              class="registrationChecksStyle">
@@ -27,7 +28,8 @@
                    type="email"
                    required
                    placeholder="Email"
-                   name="email">
+                   name="email"
+                   maxlength="128">
         </label>
         <br><br>
         <label class="formLayout">
@@ -36,7 +38,9 @@
                    type="password"
                    required
                    placeholder="Password"
-                   name="password"></label>
+                   name="password"
+                   maxlength="225">
+        </label>
         <div id="passwordRequirements"
              class="registrationChecksStyle">
             <div id="passwordLength">8 characters</div>
@@ -60,7 +64,7 @@
         <br><br>
         <label><input class="checker" type="checkbox" required> I am 13+ years of age</label><br><br>
         <label><input class="checker" type="checkbox" required> I agree with the <a href="">TOS and Privacy Rules</a></label><br><br>
-        <button id="submit" class="submitButtons">submit</button>
+        <button type="submit" id="submit" class="submitButtons">submit</button>
         <br>
     </form>
 </main>

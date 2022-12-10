@@ -1,6 +1,6 @@
 var express = require('express');
 const {isLoggedIn} = require('../middleware/protectors');
-const {getRecentPosts, getPostInfo} = require('../middleware/posts');
+const {getRecentPosts, getPostInfo, getComments} = require('../middleware/posts');
 var router = express.Router();
 
 
@@ -20,11 +20,11 @@ router.get('/registration', function(req, res, next) {
     res.render('registration', { title: 'Register', head:"Registration Page"});
 });
 
-router.get('/viewpost', function(req, res, next) {
-    res.render('viewpost', { title: 'View Post', head:"View Post Page"});
-});
+//router.get('/viewpost', function(req, res, next) {
+//    res.render('viewpost', { title: 'View Post', head:"View Post Page"});
+//});
 
-router.get('/posts/:id(\\d+)', getPostInfo, function (req, res, next) {
+router.get('/posts/:id(\\d+)', getPostInfo, getComments, function (req, res, next) {
     res.render('viewpost', { title: 'View Post', head:"View Post Page"})
 })
 
