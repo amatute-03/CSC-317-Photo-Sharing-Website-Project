@@ -1,12 +1,54 @@
-<script defer type="text/javascript" src="public/js/viewpostScript.js"></script>
-
+<script defer type="text/javascript" src="../public/js/viewpostScript.js"></script>
 <main id="postsMain">
-    <section class="imageSection">
-        <b>Jellyfish</b> - Joey <br><br>
-        <img class="imageScaling" src="../public/images/jellyfish2.png" alt="jellyfish">
-        <br>Jellyfish Swimming<br>
-        <i>09/05/2022</i> <br>
-    </section>
-    <div id="commentDiv"></div>
+    <div>
+        <section class="imageSection">
+
+            <b>{{currentPost.title}}</b> - {{currentPost.username}} <br><br>
+            <img class="imageScaling" src="/{{currentPost.image}}" alt="dead image">
+            <br>{{currentPost.description}}<br>
+            <i>{{formatDate currentPost.createdAt}}</i> <br>
+
+        </section>
+        <br><br>
+        <div class="newComment">
+            {{#if isLoggedIn}}
+                <div id="gri">
+                    <span id="textArea" class="textareacodepen" role="textbox" contenteditable></span>
+                    <button id="commentButton"
+                            class='submitButtons'
+                            type='submit'
+                            data-postid="{{currentPost.id}}"
+                            aria-hidden="true"
+                            style="margin-top: 1rem">
+                        submit
+                    </button>
+                </div>
+            {{else}}
+                <div id="gri">Please be logged in to comment</div>
+            {{/if}}
+        </div>
+
+    </div>
+
+    {{#if currentPost.comments.length}}
+    <div id='commentDiv'>
+
+        {{#each currentPost.comments}}
+            <div class='comments' id="comment-{{id}}">
+                <div style='grid-area:uname; font-weight:bold'>
+                    {{username}}
+                </div>
+                <div style='grid-area:stamp'>
+                    {{formatDate createdAt}}
+                </div>
+                <div style='grid-area:comment'>
+                    {{text}}
+                </div>
+            </div>
+        {{/each}}
+
+    </div>
+    {{/if}}
+
 </main>
 

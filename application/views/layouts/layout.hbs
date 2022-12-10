@@ -1,3 +1,4 @@
+
 <head>
     <title>CSC 317 App - {{title}}</title>
     <link rel="icon" href="/public/favicon.ico" sizes="70x70" type="image/ico">
@@ -7,15 +8,15 @@
 </head>
 
 <body>
+
+{{#if (nonEmptyObject messages)}}
+        {{> flashmessages}}
+{{/if}}
+
     <section><header class="headerStyling"><b>{{head}}</b></header></section>
 
-    <nav class="navStyling">
-        <a class="navLinks" href="/index">index</a>
-        <a class="navLinks" href="/login">login</a>
-        <a class="navLinks" href="/registration">registration</a>
-        <a class="navLinks" href="/postimage">post image</a>
-        <a class="navLinks" href="/viewpost">view post</a>
-    </nav>
+    {{> nav}}
+
 
     <br><br>
     {{{body}}}
@@ -24,3 +25,19 @@
     <footer class="footerStyling">©2022 Adan Matute</footer>
 
 </body>
+
+{{#if isLoggedIn}}
+    <script>
+        document.getElementById("logoutButton").addEventListener('click', function(e) {
+            fetch('/users/logout', {method: 'POST'})
+                    .then(response => response.json())
+                    .then(function (res_json) {
+                        console.log(res_json);
+                        window.location.replace('/')
+                    })
+                    .catch(err => console.log(err))
+        })
+    </script>
+{{else}}
+
+{{/if}}

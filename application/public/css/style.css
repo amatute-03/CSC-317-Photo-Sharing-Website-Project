@@ -61,35 +61,13 @@ a {
   position: sticky;
   z-index: 1;
   top: 0.5rem;
-  margin: 0.125rem 1rem;
+  /*margin: 0.125rem 1rem;*/
+  margin: 0.125rem 1rem 1rem 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 5px;
 }
-
-/*          ***changes planned for logout
-.nav2 {
-  display: grid;
-  grid-template-areas:
-          'null main1 main2 main3 main4 main5 logout';
-  gap: 1rem;
-
-  text-align: center;
-  background: rgb(95, 99, 158);
-  box-shadow: rgb(63, 70, 99) 1rem 1rem;
-  font: bold 15px Arial;
-  height: auto;
-  border-radius: 1rem;
-  padding: 1rem;
-  position: sticky;
-  z-index: 1;
-  top: 0.5rem;
-  margin: 0.125rem 1rem;
-
-}
-*/
-
 
 .navLinks {
   padding: 0.25rem 1.5rem;
@@ -205,14 +183,30 @@ a {
 .imageSection {
   background: rgb(95, 99, 158);
   box-shadow: rgb(63, 70, 99) 1rem 1rem;
-  padding: 1rem 0;
+  padding: 1rem 1rem;
   text-align: center;
   border-radius: 1rem;
   /*min-height: 100%;*/
-  height: 32rem;
+  /*height: 32rem;*/
   /*margin: auto;*/
-  width: 45rem;
+  /*width: 45rem;*/
+  width: auto;
+  /*min-width: 45rem;*/
   margin: 0.125rem 1rem;
+  height: auto;
+  max-width: 50rem;
+  max-height: 44rem;
+}
+
+.newComment {
+  border-radius: 1rem;
+  background: rgb(95, 99, 158);
+  box-shadow: rgb(63, 70, 99) 1rem 1rem;
+  text-align: center;
+  max-width: 30rem;
+  margin-inline:auto;
+  padding:1.5rem;
+
 }
 
 #postsMain { /*may change when adding more images and seeing how it scales*/
@@ -224,6 +218,7 @@ a {
   width: 90%;
   display: block;
   margin: auto;
+  max-height: 28rem;
 }
 
 .inputBoxes {
@@ -231,6 +226,8 @@ a {
   border: none;
   text-align: center;
   width: 180px;
+  user-select: none;
+  text-overflow: ellipsis;
 }
 
 .inputBoxes:hover {
@@ -293,23 +290,6 @@ a {
   z-index: -1;
 }
 
-/*@media screen and (max-width: 480px)  {
-  body {
-    background-color: rgb(255 170 0);
-  }
-  .navStyling {
-    flex-direction: column;
-    position: relative;
-  }
-  .formText {
-    text-align: center;
-  }
-  .indexIconDiv {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}*/
-
 .registrationChecksStyle {
   font: bold 12px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: flex;
@@ -346,7 +326,7 @@ a {
   background: rgba(95, 99, 158, 0.5);    /* ******changes made, may revert*/
   box-shadow: rgba(63, 70, 99, 0.5) 0.75rem 0.75rem;
 
-  margin: 3rem;
+  /*margin: 3rem;*/
   position: relative;
   justify-content: space-evenly;
   padding-inline: 5rem;
@@ -359,8 +339,8 @@ a {
 
 .cards {
   width: 10rem;
-  height: auto;
-  min-height: 100%;
+  /*height: 22rem;*/
+  /*min-height: 100%;*/
   border-radius: 1rem;
   background: rgb(95, 99, 158);
   box-shadow: rgb(63, 70, 99) 0.75rem 0.75rem;
@@ -368,11 +348,13 @@ a {
   position: relative;
   text-align: center;
   /*top: 0;*/
-  padding: 1.75rem 0 0.5rem 0;
+  padding: 1.75rem 0 1rem 0;
   font-size: 16px;
   font-weight: bold;
   color: #fff;
   user-select: none;
+
+  /*max-height: 20rem;*/
 }
 
 
@@ -394,15 +376,11 @@ a {
 
 .indexBlockTexts {
   font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
-  padding: 10px;
+  padding-inline: 8px;
+  max-height: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
-
-
-
-
-
-
 
 .comments {
   width: 30rem;/*10rem;  ***may revert   */
@@ -419,13 +397,15 @@ a {
   text-align: left;
   font-size: 16px;
   color: #fff;
-  user-select: none;
+  /*user-select: none;*/
   padding: 1rem 1rem 1rem 1rem;
   display: grid;
   grid-template-areas:
-          'pic pic uname uname stamp stamp'
-          'pic pic comment comment comment comment'
-          'pic pic comment comment comment comment';
+          'uname stamp'
+          'comment comment'
+          'comment comment';
+  grid-template-columns: 10rem auto;
+  grid-template-rows: auto auto;
   gap: 1rem;
 }
 
@@ -438,6 +418,7 @@ a {
   padding-top: 1.5rem;
   padding-bottom: 1rem;
 
+  position: relative;
 
   border-radius: 1rem;
   background: rgba(95, 99, 158, 0.5);    /* ******changes made, may revert*/
@@ -463,39 +444,90 @@ a {
   background: #3f4562;
 }
 
-
-/*
-.commentButton {
-  width: 10rem;
-  height: auto;
+#downButton {
+  position: absolute;
+  height: 2rem;
+  width: 3rem;
+  background: black;
   border-radius: 1rem;
-  background: rgb(95, 99, 158);
-  box-shadow: rgb(63, 70, 99) 0.75rem 0.75rem;
-  margin: 0 1.5rem 1.5rem 1.5rem;
-  position: relative;
+
+}
+
+.alert {
+  width: 35rem;
+  height: auto;
+  margin: auto;
   text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
+  border-radius: 1rem;
+  padding: 0.5rem 0.5rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  animation: fadeout 5s;
+  opacity: 0;
   user-select: none;
-  padding: 1rem 1rem 1rem 1rem;
+  border-width: 0.25rem;
+  border-style: dashed;
+}
+@keyframes fadeout {
+  0% {opacity: 1}
+  75% {opacity: 1}
+  100% {opacity: 0}
 }
 
-.newCommentButton:hover {
-  background: rgb(57, 61, 89);
-  box-shadow: rgb(73, 80, 129) 0.5rem 0.5rem,
-  rgb(63, 70, 99) 1rem 1rem;
-  transition: 250ms ease;
-  cursor: pointer;
+.alertSuccess {
+  background: #bfff66;
+  border-color: black;
+  color: black;
 }
 
-.newCommentButton:active {
-  top: 2px;
-  left: 2px;
-  box-shadow: rgb(73, 80, 129) 0.5rem 0.5rem;
-  transition: 250ms ease;
+.alertDanger {
+  background: orangered;
 }
-*/
 
+#navSearch {
+  height: 1.25rem;
+  width: 32rem; /*42rem;*/
+}
 
+.long {
+  width: 32rem;
+}
 
+.textareacodepen {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 1px 6px;
+
+  background: white;
+  color: black;
+  border-radius: 1rem;
+
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  resize: none;
+  min-height: 40px;
+  line-height: 20px;
+
+  max-height: 4rem;
+  overflow-y: visible;
+}
+
+.textareacodepen::-webkit-scrollbar {
+  width: 1rem;
+}
+
+.textareacodepen::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1rem #ffffff;
+  border-radius: 10px;
+}
+
+.textareacodepen::-webkit-scrollbar-thumb {
+  background: #393b53;
+  border-radius: 10px;
+}
+
+.textareacodepen::-webkit-scrollbar-thumb:hover {
+  background: #3f4562;
+}

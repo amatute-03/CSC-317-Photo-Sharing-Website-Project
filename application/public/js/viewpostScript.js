@@ -1,27 +1,58 @@
+document.getElementById('commentButton').addEventListener("click", function(e) {
+    let commentTextArea = document.getElementById('textArea')
+    let commentText = commentTextArea.innerText;
+    let postId = e.currentTarget.dataset.postid;
+
+    if(!commentText) return;
+
+    fetch('/comments/create', {
+        method: 'POST',
+        headers: {
+            "Content-type": "Application/json"
+        },
+        body: JSON.stringify({
+            comment: commentText,
+            postId: postId
+        })
+    })
+    .then(response => response.json())
+    .then(res_json => {
+        console.log(res_json)
+        window.location.reload()
+    })
+    .catch(err =>console.log(err))
+
+
+})
+
+
+
+/*
 let commentsDiv = document.getElementById("commentDiv")
 
 let placeholderImageCounter = 0
-let placeholderNames = ['login', 'register', 'post', 'view']
+//let placeholderNames = ['login', 'register', 'post', 'view']
 
 let i;
-for (i = 0; i < 6; i++) {
+for (i = 0; i < 4; i++) {
 
-    if (placeholderImageCounter > 3) {
-        placeholderImageCounter = 0
-    }
+    //if (placeholderImageCounter > 3) {
+    //    placeholderImageCounter = 0
+    //}
 
     let comment = document.createElement('div')
     comment.setAttribute('class', 'comments')
     //ab.style.width = '30rem'
     //ab.style.marginInline = '1.5rem'
 
-    let pic = document.createElement('img')
-    pic.setAttribute('src', '/public/images/'+placeholderNames[placeholderImageCounter++]+'.png')
-    pic.style.gridArea =  'pic'
+//removal of pfp, may implement or not
+    //let pic = document.createElement('img')
+    //pic.setAttribute('src', '/public/images/'+placeholderNames[placeholderImageCounter++]+'.png')
+    //pic.style.gridArea =  'pic'
 
-    pic.style.height = '3rem';
-    pic.style.display = 'block';
-    pic.style.marginRight = 'auto';
+    //pic.style.height = '3rem';
+    //pic.style.display = 'block';
+    //pic.style.marginRight = 'auto';
 
     let user = document.createElement('div')
     user.style.gridArea= 'uname'
@@ -42,7 +73,7 @@ for (i = 0; i < 6; i++) {
         'faucibus ornare suspendisse sed nisi lacus sed viverra '
 
 
-    comment.appendChild(pic)
+    //comment.appendChild(pic)
     comment.appendChild(user)
     comment.appendChild(stamp)
     comment.appendChild(com)
@@ -52,7 +83,7 @@ for (i = 0; i < 6; i++) {
     //    e.currentTarget.remove()
     //})
 
-    commentsDiv.appendChild(comment)
+    //commentsDiv.appendChild(comment)              //adds the comments themselves to the div(autogen not created)
 }
 
 let newCommentDiv = document.createElement('form')
@@ -77,7 +108,7 @@ sub.innerText = 'submit'
 
 newCommentDiv.appendChild(sub)
 
-commentsDiv.appendChild(newCommentDiv)
+//commentsDiv.appendChild(newCommentDiv)                adds the textbox and button to the div
 
 
 /*
