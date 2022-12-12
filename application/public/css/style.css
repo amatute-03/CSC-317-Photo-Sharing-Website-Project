@@ -195,7 +195,7 @@ a {
   margin: 0.125rem 1rem;
   height: auto;
   max-width: 50rem;
-  max-height: 44rem;
+  max-height: 29rem;
 }
 
 .newComment {
@@ -218,7 +218,7 @@ a {
   width: 90%;
   display: block;
   margin: auto;
-  max-height: 28rem;
+  max-height: 22rem;
 }
 
 .inputBoxes {
