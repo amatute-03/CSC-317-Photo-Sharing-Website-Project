@@ -1,4 +1,4 @@
-# CSC 317 Course Project
+# CSC 317 Intro to Web Software Development Course Project
 
 ## Purpose
 
